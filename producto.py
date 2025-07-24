@@ -1,11 +1,11 @@
 class Producto:
-    def __init__(self, nombrePro, precio, stock):
-        self.__nombre = nombre
+    def __init__(self, nombreProducto, precio, stock):
+        self.__nombreProducto = nombreProducto
         self.__precio = precio
         self.__stock = stock
 
     def get_nombre(self):
-        return self.__nombre
+        return self.__nombreProducto
 
     def get_precio(self):
         return self.__precio
@@ -23,4 +23,4 @@ class Producto:
         self.__stock += cantidad
 
     def __str__(self):
-        return f"{self.__nombre} - ${self.__precio} {self.__stock} disponible"
+        return f"{self.__nombreProducto} - ${self.__precio} {self.__stock} disponible"

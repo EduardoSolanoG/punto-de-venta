@@ -19,9 +19,6 @@ class Producto:
             return True
         return False
 
-    def aumentar_stock(self, cantidad):
-        self.__stock += cantidad
-
     def __str__(self):
         return f"{self.__nombreProducto} - ${self.__precio} {self.__stock} disponible"
 

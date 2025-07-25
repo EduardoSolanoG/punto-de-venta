@@ -6,8 +6,6 @@ def main():
     print("=== Sistema de Punto de Venta ===")
     nombre_cliente = input("Ingrese el nombre del cliente: ")
     cliente = Cliente(nombre_cliente)
-
-
     mostrar_productos(lista_productos)
     opcion = input("\nSeleccione el número del producto para agregar al carrito: ")
 

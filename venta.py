@@ -12,7 +12,7 @@ class Venta:
         try:
             if 0 <= indice < len(self.__productos):
                 producto, cantidad_actual = self.__productos[indice]
-                print(f"Tienes {cantidad_actual} piezas de {producto.get_nombre()} en el carrito.")
+                print(f"Tienes {cantidad_actual} piezas de {producto.get_nombreProducto()} en el carrito.")
                 opcion = input("¿Cuántas piezas deseas eliminar? (o escribe 'todo'): ")
 
                 if opcion.lower() == 'todo':
@@ -38,16 +38,15 @@ class Venta:
 
     def mostrar_factura(self):
         print("\n=== FACTURA ===")
-        print(f"Cliente: {self.__cliente.get_nombre()}")
+        print(f"Cliente: {self.__cliente.get_nombreProducto()}")
         total = 0
         resumen = Counter()
         for producto, cantidad in self.__productos:
-            resumen[producto.get_nombre()] += cantidad
+            resumen[producto.get_nombreProducto()] += cantidad
             subtotal = producto.get_precio() * cantidad
-            print(f"{producto.get_nombre()} x{cantidad} - ${subtotal}")
+            print(f"{producto.get_nombreProducto()} x{cantidad} - ${subtotal}")
             total += subtotal
         print(f"Total a pagar: ${total}\n")
 
     def __str__(self):
-        return f"Venta de {self.__cliente.get_nombre()} con {len(self.__productos)} productos."
-
+        return f"Venta de {self.__cliente.get_nombreProducto()} con {len(self.__productos)} productos."

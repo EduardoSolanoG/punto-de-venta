@@ -60,5 +60,5 @@ class Venta:
         print(f"TOTAL A PAGAR: ${total}\n")
 
 #Representacion de la venta como texto
-    def __str__(self): #revisenlo y diganme si esta bien este cambio
+    def __str__(self):
         return f"Compra de {self.__cliente.get_nombre()} con {len(self.__productos)} productos."

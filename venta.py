@@ -48,15 +48,16 @@ class Venta:
 #Muestra el resumen de compra: cliente, productos, cantidades y total
     def mostrar_nota(self):
         print("\n=== NOTA DE COMPRA ===")
-        print(f"Cliente: {self.__cliente.get_nombreProducto()}")
+        print(f"Cliente: {self.__cliente.get_nombre()}")
         total = 0
         resumen = Counter()
+        print(f"PRODUCTO - CANTIDAD - SUBTOTAL")
         for producto, cantidad in self.__productos:
             resumen[producto.get_nombreProducto()] += cantidad
             subtotal = producto.get_precio() * cantidad
             print(f"{producto.get_nombreProducto()} x{cantidad} - ${subtotal}")
             total += subtotal
-        print(f"Total a pagar: ${total}\n")
+        print(f"TOTAL A PAGAR: ${total}\n")
 
 #Representacion de la venta como texto
     def __str__(self): #revisenlo y diganme si esta bien este cambio
